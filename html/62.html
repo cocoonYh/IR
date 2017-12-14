@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 南开大学招投标管理办公室</title>
+
+    <link href="/Content/css?v=v0HgNIWYhafb0S8IMcAdy8CWMD_gveTlL0PQLqCAdZk1" rel="stylesheet"/>
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+
+    <!--[if lt IE 9]>
+      <script src="~/Scripts/html5shiv.min.js"></script>
+    <![endif]-->
+    
+    <script src="/bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
+
+    <script src="/bundles/bootstrap?v=yHLRJNakECqYLy3q-PkDmQPTlmp9u3XwQ-bUAV7sV1U1"></script>
+
+    
+</head>
+<body>
+
+    <div class="container">
+    <div class="masthead">
+        <div>
+            <img src="/Content/Images/logo.png" class="left" style="margin-bottom: 5px" />
+
+                            <ul class="favorites">
+                    <li>
+                        <a href="/Account/VendorLogin" id="loginLink">供应商登录Login</a>
+                        <span>/</span>
+                        <a href="/Account/VendorRegister" id="registerLink">供应商注册Register</a>
+                        <span>/</span>
+                        <a href="/Account/CheckVendor" id="registerLink">销售人员注册Register</a>
+                    </li>
+                    <li><a href="mailto:zbb@nankai.edu.cn">联系我们Contact</a></li>
+                    <li><a href="http://192.168.8.54:8054" target="_blank">旧版网站</a></li>
+                </ul>
+
+            
+        </div>
+
+
+        
+        <ul class="nav nav-justified">
+            <li   class="active"      ><a href="/Home/Index">网站首页</a></li>
+            <li ><a href="/Home/About">机构简介</a></li>
+            <li ><a href="/Article/Public">招标公告</a></li>
+            <li ><a href="/Article/Announce">结果公示</a></li>
+            <li ><a href="/Article/Bulletin">中标公告</a></li>
+            <li ><a href="/Article/Download">资料下载</a></li>
+            <li ><a href="/Home/Contact">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<div class="container top-buffer">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="background:url(../../Content/Images/m1.jpg) no-repeat top center scroll; background-size: cover;">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="/Content/Images/p11.png" alt="..." />
+                <div class="carousel-caption">
+                    
+                    <p></p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/Content/Images/p22.png" alt="..." />
+                <div class="carousel-caption">
+                    
+                    <p></p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/Content/Images/p33.png" alt="..." />
+                <div class="carousel-caption">
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+
+
+
+    
+    <div class="container body-content">
+        
+
+
+
+
+
+
+<div class="row">
+    <div class="col-xs-6 col-md-4">
+        <h3 class="YaHei">
+            <a href="/Article/Public" style="color:black ">招标公告 <small>Public</small></a>
+        </h3>
+        <div id="publicDiv"></div>
+        <p class="top-buffer10"><a class="btn btn-default" href="/Article/Public" role="button">更多 &raquo;</a></p>
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <h3 class="YaHei">
+            <a href="/Article/Announce" style="color:black ">结果公示 <small>Announce</small></a>
+        </h3>
+        <div id="announceDiv"></div>
+        <p class="top-buffer10"><a class="btn btn-default" href="/Article/Announce" role="button">更多 &raquo;</a></p>
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <h3 class="YaHei">
+            <a href="/Article/Bulletin" style="color:black ">中标公告 <small>Bulletin</small></a>
+        </h3>
+        <div id="bulletinDiv"></div>
+        <p class="top-buffer10"><a class="btn btn-default" href="/Article/Bulletin" role="button">更多 &raquo;</a></p>
+    </div>
+</div>
+
+<div class="row top-buffer">
+    <div class="col-xs-3 col-md-2"></div>
+    <div class="col-xs-10 col-md-8"><hr /></div>
+    <div class="col-xs-3 col-md-2"></div>
+</div>
+
+<div class="row placeholders">
+    <div class="col-xs-2 col-sm-2 placeholder">
+        <a href="/Account/VendorLogin">
+            <img class="img-responsive" alt="Generic placeholder thumbnail" src="/Content/Images/vender.png" width="96" />
+        </a>
+        <h4>
+            <a href="/Account/VendorLogin">供应商准入</a>
+        </h4>
+        <span class="text-muted">Vendor Entrance</span>
+    </div>
+    <div class="col-xs-2 col-sm-2 placeholder">
+        <a href="/Home/GuideDoc" target="_blank">
+            <img class="img-responsive" alt="Generic placeholder thumbnail" src="/Content/Images/guide.png" width="96">
+        </a>
+        <h4>
+            <a href="/Home/GuideDoc">办公指南</a>
+        </h4>
+        <span class="text-muted">Guide Doc</span>
+    </div>
+    <div class="col-xs-2 col-sm-2 placeholder">
+        <a href="http://zbbhq.nankai.edu.cn" target="_blank">
+            <img class="img-responsive" alt="Generic placeholder thumbnail" src="/Content/Images/lead.png" width="96">
+        </a>
+        <h4>
+            <a href="http://zbbhq.nankai.edu.cn" target="_blank">领导小组办公系统</a>
+        </h4>
+        <span class="text-muted">Leader Management</span>
+    </div>
+    <div class="col-xs-2 col-sm-2 placeholder">
+        <a href="http://zbbsp.nankai.edu.cn" target="_blank">
+            <img class="img-responsive" alt="Generic placeholder thumbnail" src="/Content/Images/apply.png" width="96">
+        </a>
+        <h4>
+            <a href="http://zbbsp.nankai.edu.cn" target="_blank">网上申报审批系统</a>
+        </h4>
+        <span class="text-muted">Application & Approval</span>
+    </div>
+    <div class="col-xs-2 col-sm-2 placeholder">
+        <a href="/Account/ExpertRegister" target="_blank">
+            <img class="img-responsive" alt="Generic placeholder thumbnail" src="/Content/Images/lead3.png" width="96">
+        </a>
+        <h4>
+            <a href="/Account/ExpertRegister" target="_blank">
+                专家注册
+            </a>
+        </h4>
+        <span class="text-muted">Expert Login</span>
+    </div>
+    <div class="col-xs-2 col-sm-2 placeholder">
+        <a href="/Article/Download" target="_blank">
+            <img class="img-responsive" alt="Generic placeholder thumbnail" src="/Content/Images/paper.png" width="96">
+        </a>
+        <h4><a href="/Article/Download" target="_blank">下载中心</a></h4>
+        <span class="text-muted">Download Center</span>
+    </div>
+</div>
+
+
+<div class="row top-buffer">
+    <div class="col-xs-6 col-md-4">
+        <a href="/Article/News" class="thumbnail">
+            <img alt="..." src="/Content/Images/pic1.jpg">
+        </a>
+
+        <h3 class="YaHei">
+            <a href="/Article/News">工作动态 <small>News</small></a>
+        </h3>
+        <div class="tile-info tile-info-large tile-body">
+            南开大学招投标管理办公室工作动态，办公通知.&raquo;
+        </div>
+        <div id="newsDiv"></div>
+        <p class="top-buffer10"><a class="btn btn-default" href="/Article/News" role="button">更多 &raquo;</a></p>
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <a href="/Article/Regulations" class="thumbnail">
+            <img alt="..." src="/Content/Images/pic2.jpg">
+        </a>
+
+        <h3 class="YaHei">
+            <a href="/Article/Regulations">政策法规 <small>Regulations</small></a>
+        </h3>
+        <div class="tile-info tile-info-large tile-body">
+            招投标工作中涉及到的政策法规，国家和地方标准.&raquo;
+        </div>
+        <div id="regulationsDiv"></div>
+        <p class="top-buffer10"><a class="btn btn-default" href="/Article/Regulations" role="button">更多 &raquo;</a></p>
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <a href="/Article/Download" class="thumbnail">
+            <img alt="..." src="/Content/Images/pic3.jpg">
+        </a>
+
+        <h3 class="YaHei">
+            <a href="/Article/Download">资料下载 <small>Download</small></a>
+        </h3>
+        <div class="tile-info tile-info-large tile-body">
+            招投标相关资料，文档，表格下载中心.&raquo;
+        </div>
+        <div id="downloadDiv"></div>
+        <p class="top-buffer10"><a class="btn btn-default" href="/Article/Download" role="button">更多 &raquo;</a></p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/Article/PublicPartial",
+            success: function (result) {
+                $("#publicDiv").html(result);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/Article/AnnouncePartial",
+            success: function (result) {
+                $("#announceDiv").html(result);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/Article/BulletinPartial",
+            success: function (result) {
+                $("#bulletinDiv").html(result);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/Article/NewsPartial",
+            success: function (result) {
+                $("#newsDiv").html(result);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/Article/RegulationsPartial",
+            success: function (result) {
+                $("#regulationsDiv").html(result);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/Article/DownloadPartial",
+            success: function (result) {
+                $("#downloadDiv").html(result);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+</script>
+
+
+
+
+        <br class="clearfix" />
+        
+        
+<div id="friendlinksDiv">
+    
+</div>
+
+<div class="footer">
+    <p>
+        &copy; 2017 南开大学招投标管理办公室 - <a href="#">网站地图</a>&nbsp; |&nbsp; <a href="#">法律声明</a>&nbsp; |&nbsp; <a href="/Home/Contact">联系我们</a>&nbsp;
+        |&nbsp; <a href="/Home/GuideDoc">常见问题</a>&nbsp; |&nbsp; <a href="#">诚聘英才</a>&nbsp; |&nbsp; <a href="/Article/Download">资料下载</a>&nbsp; |&nbsp; <a href="/Home/Admin" target="_blank">网站管理</a>&nbsp; |&nbsp; <a href="http://192.168.8.54/SysAdmin" target="_blank">办公中心</a>
+    </p>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/FriendLink/WebIndex",
+            success: function (result) {
+                $("#friendlinksDiv").html(result);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+</script>
+    </div>
+</body>
+</html>

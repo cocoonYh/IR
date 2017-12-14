@@ -1,0 +1,667 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>南开大学本科招生网</title>
+<LINK type="text/css" href="index.css"  rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="menu.css">
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/zoombox.js"></script>
+<link rel="stylesheet" type="text/css" href="css/zoombox.css" media="screen" />
+<style type="text/css">
+* { margin:0;
+    padding:0;
+}
+div#menu {
+    /*top:40px;*/
+        position:relative;
+    left:0px;
+    width:100%;
+}
+body{background:#eee}
+ul{list-style:none;}
+a{text-decoration:none;}
+</style>
+<script>
+<!--
+var timeout         = 500;
+var closetimer      = 0;
+var ddmenuitem      = 0;
+
+// open hidden layer
+function mopen(id)
+{
+        // cancel close timer
+        mcancelclosetime();
+
+        // close old layer
+        if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+        // get new layer and show it
+        ddmenuitem = document.getElementById(id);
+        ddmenuitem.style.visibility = 'visible';
+
+}
+// close showed layer
+function mclose()
+{
+        if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+{
+        closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+        if(closetimer)
+        {
+                window.clearTimeout(closetimer);
+                closetimer = null;
+        }
+}
+
+// close layer when click-out
+document.onclick = mclose;
+//检查表单
+function check_input()
+{
+    var obj = document.getElementById("form1");
+        if (obj.zkzh.value=="")
+        {
+                alert("请输入您的准考证号！");
+                obj.zkzh.focus();
+                return false;
+        }
+
+        if (obj.xm.value=="")
+        {
+                alert("请输入您的姓名！");
+                obj.xm.focus();
+                return false;
+        }
+        if (obj.checkcode.value=="")
+        {
+                alert("请输入验证码！");
+                obj.checkcode.focus();
+                return false;
+        }
+    return true;
+}
+
+//提交表单查询
+function query_submit()
+{
+        if(check_input())
+        {
+                        var obj = document.getElementById("form1");
+                        var obj1 = document.getElementById("lx");
+                        var index = obj1.selectedIndex; // 选中索引
+                        var value = obj1.options[index].value; // 选中值
+                        if(value == 0)
+                        {
+							var obj = document.getElementById("form1");
+							alert("请选择录取类型！");
+							obj.lx.focus();
+                        }
+                        if(value == 1)
+                        {
+							module = 81;
+                        }
+                        if(value == 2)
+                        {
+							module = 82;
+                        }
+                        if(value == 3)
+                        {
+							module = 83;
+                        }
+                        obj.action = "second.php?act=query_result&module="+module;
+                        obj.submit();
+        }
+}
+//百度搜索代码
+function g(formname)
+{
+var url = "http://www.baidu.com/baidu";
+formname.ct.value = "2097152";
+formname.action = url;
+return true;
+}
+-->
+</script>
+</head>
+
+<body topmargin="0" bottommargin="0" background="images/bg.gif">
+
+<div id="container">
+        <table border="0" cellpadding="0" cellspacing="0" width="1018" bgcolor="#FFFFFF" >
+                <tr>
+                        <td width="9" background="images/bg_left.gif" rowspan="11"></td>
+                        <td width="1000" height="180" style="background:url('images/head.gif') no-repeat;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="1000" height="180">
+                                <tr>
+                                        <td height="115" colspan="3">
+                                        <div align="right">
+                                          <form action="second.php?act=query&module=81" method="post" enctype="multipart/form-data" name="form1" target="_self" id="form1">
+                        <table border="0" cellpadding="0" cellspacing="0" width="260" height="115" background="images/recordsearch.gif">
+                          <tr>
+                            <td width="260" height="52" colspan="3" align=left> 　　　　　　　　　　
+                              <select name="lx" size="1" id="lx">
+                                  <option value="0" selected>选择类型</option>
+								  <option value="1">高考录取</option>
+<!--                                  <option value="2">自主招生录取</option>
+                                  <option value="3">美术类录取</option>-->
+                              </select></td>
+                          </tr>
+                          <tr>
+                            <td width="31"></td>
+                            <td width="154" align=left>考生号： <input name="zkzh" type="text" id="zkzh" size="11">
+                            <br>姓　名： <input name="xm" type="text" id="xm" size="11">
+                            <br>校验码： <input name="checkcode" type="text" id="checkcode" size="4"><img id="img_checkcode" width="48" style="cursor:pointer" align="absmiddle" src="checkcode.php" alt="看不清请重新点击" onClick="var i_date=new Date();this.src='checkcode.php?time='+i_date.getTime();"></td>
+                            <td width="75" align=left><input type="button" name="Submit" value="" style="width:39px; height:42px;  border:0; background:url('images/searchbutton.gif') no-repeat left top; cursor:pointer;" onClick="javascript:query_submit();"></td>
+                          </tr>
+                          <tr>
+                            <td colspan="3" height="5"></td>
+                          </tr>
+                        </table>
+						</form>
+                                        </div>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td height="65" width="261" rowspan="3"></td>
+                                        <td height="18" colspan="2"></td>
+                                </tr>
+                                <tr>
+                                        <td height="29" style="background-repeat:no-repeat" background="images/records.gif" width="480">　<a href="detail.php?act=list&module=44" style="font-size: 11pt; font-weight: 700; color:#fff;" target="_self">往年录取分数</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="detail.php?act=list&amp;module=42" style="font-size: 11pt; font-weight: 700; color:#2d588c;" target="_self">分省招生计划</a></td>
+                                        <td height="21" width="259" style="background-repeat:no-repeat" background="images/search.jpg"><form name="f1" onsubmit="return g(this);" target="_blank"><input name=tn type=hidden value="bds"><input name=cl type=hidden value="3"><input name=ct type=hidden><input name=si type=hidden value="zsb.nankai.edu.cn"><input type="text" name="word" style="width:210px; height:20px; margin:0px; margin-left:4px; border:0 none; background-color:transparent; float:left;" /><input type="submit" value="" style=" float:right; width:30px; height:20px; margin:0px; margin-right:15px; background:url('images/dot_alpha.gif') repeat; border:none; cursor:pointer;"></form></td>
+                                </tr>
+                                <tr>
+                                        <td height="18" colspan="2"></td>
+                                </tr>
+                        </table>
+                        </td>
+                        <td width="9" background="images/bg_right.gif" rowspan="11"></td>
+                </tr>
+                <tr>
+                        <td width="1000">
+                        <table border="0" cellpadding="0" cellspacing="0" width="1000" background="images/menu.gif" style="position:relative;">
+                                <tr>
+                                        <td height="43">
+                                        <div id="menu">
+                                                <ul id="sddm">
+                                                        					<li><a href='index.html' onmouseover='mopen("m1")' onmouseout='mclosetime()'>首　页</a>
+					<div id='m1' onmouseover='mcancelclosetime()' onmouseout='mclosetime()'>
+							<a href='second.php?act=list&module=11'>招生动态</a>
+							<a href='second.php?act=list&module=12'>南开之声</a>
+					</div>
+					</li>
+					<li><a href='' onmouseover='mopen("m2")' onmouseout='mclosetime()'>南开概况</a>
+					<div id='m2' onmouseover='mcancelclosetime()' onmouseout='mclosetime()'>
+							<a href='second.php?act=read&module=21&id=19'>南开简介</a>
+							<a href='second.php?act=list&module=22'>南开风景</a>
+							<a href='second.php?act=list&module=23'>学子展示</a>
+							<a href='second.php?act=list&module=24'>视频南开</a>
+					</div>
+					</li>
+					<li><a href='second.php?act=read&module=3&id=23' onmouseover='mopen("m3")' onmouseout='mclosetime()'>院系纵览</a>
+					<div id='m3' onmouseover='mcancelclosetime()' onmouseout='mclosetime()'>
+							<a href='second.php?act=read&id=149&module=31'>文学院</a>
+							<a href='second.php?act=read&id=150&module=32'>历史学院</a>
+							<a href='second.php?act=read&id=151&module=33'>哲学院</a>
+							<a href='second.php?act=read&id=152&module=34'>法学院</a>
+							<a href='second.php?act=read&id=153&module=35'>周恩来政府管理学院</a>
+							<a href='second.php?act=read&id=187&module=36'>外国语学院</a>
+							<a href='second.php?act=read&id=188&module=37'>马克思主义教育学院</a>
+							<a href='second.php?act=read&id=189&module=38'>经济学院</a>
+							<a href='second.php?act=read&id=190&module=39'>商学院</a>
+							<a href='second.php?act=read&id=191&module=301'>数学科学学院</a>
+							<a href='second.php?act=read&id=192&module=302'>物理科学学院</a>
+							<a href='second.php?act=read&id=193&module=304'>化学学院</a>
+							<a href='second.php?act=read&id=194&module=305'>生命科学学院</a>
+							<a href='second.php?act=read&id=195&module=306'>电子信息与光学工程学院</a>
+							<a href='second.php?act=read&module=307&id=376'>计算机与控制工程学院</a>
+							<a href='second.php?act=read&id=196&module=308'>环境科学与工程学院</a>
+							<a href='second.php?act=read&id=197&module=309'>医学院</a>
+							<a href='second.php?act=read&id=198&module=310'>软件学院</a>
+							<a href='second.php?act=read&id=199&module=311'>汉语言文化学院</a>
+							<a href='second.php?act=read&id=200&module=312'>旅游与服务学院</a>
+							<a href='second.php?act=read&id=202&module=316'>药学院</a>
+							<a href='second.php?act=read&id=723&module=31'>金融学院</a>
+							<a href='second.php?act=read&id=724&module=31'>材料科学与工程学院</a>
+					</div>
+					</li>
+					<li><a href='#' onmouseover='mopen("m4")' onmouseout='mclosetime()'>报考指南</a>
+					<div id='m4' onmouseover='mcancelclosetime()' onmouseout='mclosetime()'>
+							<a href='second.php?act=list&module=41'>招生政策</a>
+							<a href='detail.php?act=list&module=42'>招生计划</a>
+							<a href='second.php?act=list&module=43'>学科建设</a>
+							<a href='detail.php?act=list&module=44'>录取分数</a>
+					</div>
+					</li>
+					<li><a href='' onmouseover='mopen("m5")' onmouseout='mclosetime()'>专题招生</a>
+					<div id='m5' onmouseover='mcancelclosetime()' onmouseout='mclosetime()'>
+							<a href='second.php?act=list&module=51'>自主招生</a>
+							<a href='second.php?act=list&module=52'>保送生</a>
+							<a href='second.php?act=list&module=53'>数学试点班招生</a>
+							<a href='second.php?act=list&module=54'>艺术特长生</a>
+							<a href='second.php?act=list&module=55'>高水平运动员</a>
+							<a href='second.php?act=list&module=56'>港澳台招生</a>
+							<a href='second.php?act=list&module=57'>美术类招生</a>
+					</div>
+					</li>
+					<li><a href='http://zhshb.nankai.edu.cn' >网上报名</a>
+					<li><a href='' onmouseover='mopen("m7")' onmouseout='mclosetime()'>网上咨询</a>
+					<div id='m7' onmouseover='mcancelclosetime()' onmouseout='mclosetime()'>
+							<a href='second.php?act=read&module=71&id=154'>热点问题</a>
+							<a href='second.php?act=consult&module=72'>我要咨询</a>
+							<a href='second.php?act=consult_query&module=73'>查询回复</a>
+							<a href='second.php?act=consult_list&module=74'>全部咨询</a>
+					</div>
+					</li>
+					<li><a href='' onmouseover='mopen("m8")' onmouseout='mclosetime()'>录取查询</a>
+					<div id='m8' onmouseover='mcancelclosetime()' onmouseout='mclosetime()'>
+							<a href='second.php?act=query&module=81'>高考录取</a>
+					</div>
+					</li>
+					<li><a href='second.php?act=down&module=9' >下载专区</a>
+					<li><a href='second.php?act=read&module=10&id=20' onmouseover='mopen("m10")' onmouseout='mclosetime()'>联系我们</a>
+					<div id='m10' onmouseover='mcancelclosetime()' onmouseout='mclosetime()'>
+							<a href='second.php?act=read&module=10&id=20'>联系招生办</a>
+							<a href='second.php?act=list&module=102'>联系招生组</a>
+					</div>
+					</li>
+                                                </ul>
+                                        </div>
+                                        </td>
+                                </tr>
+                        </table>
+                        </td>
+                </tr>
+                <tr>
+                        <td width="1000">
+                        <img border="0" src="images/undermenu.jpg" width="1000" height="24"></td>
+                </tr>
+                <tr>
+                        <td width="1000">
+                        <table border="0" cellpadding="0" cellspacing="0" width="1000" background="images/middle1_voice.gif" height="323" style="background-repeat:no-repeat;">
+				<tr>
+					<td width="30" rowspan="2">　</td>
+					<td width="432" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					    <tr>
+							<td height="57" colspan="2"><a href="second.php?act=list&amp;module=12" target="_self" style="position:relative;top:0px; left:360px; background-color:#FFFFFF;text-decoration: none; z-index:1; color:#519100" title="查看更多内容">&gt;&gt;&nbsp;更多内容</a></td>
+						</tr>
+											    <tr>
+							<td height="5" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="20" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+							<td height="20"><a href='second.php?act=read&module=12&id=976' target="_blank" style=" " title="南开大学非通用语专业与人文社科专业复合型国际化本科人才培养项目开班">南开大学非通用语专业与人文社科专业复合型国际化本科人才培养项...(2017-09-21)</a></td>
+						</tr>
+											    <tr>
+							<td height="5" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="20" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+							<td height="20"><a href='second.php?act=read&module=12&id=923' target="_blank" style=" font-weight: 700;color: #FF0000;" title="教育部办公厅关于严格高校自主招生资格审查和考核工作的通知">教育部办公厅关于严格高校自主招生资格审查和考核工作的通知(2017-04-21)</a></td>
+						</tr>
+											    <tr>
+							<td height="5" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="20" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+							<td height="20"><a href='second.php?act=read&module=12&id=922' target="_blank" style=" font-weight: 700;color: #FF0000;" title="南开大学严格推进自主招生资格初审和考核工作">南开大学严格推进自主招生资格初审和考核工作(2017-04-21)</a></td>
+						</tr>
+											    <tr>
+							<td height="5" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="20" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+							<td height="20"><a href='second.php?act=read&module=12&id=914' target="_blank" style=" " title="南开大学引进美国在线课程 中外师生“跨洋互动”">南开大学引进美国在线课程 中外师生“跨洋互动”(2017-02-20)</a></td>
+						</tr>
+											    <tr>
+							<td height="5" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="20" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+							<td height="20"><a href='second.php?act=read&module=12&id=901' target="_blank" style=" " title="南开学子获“外研社杯”全国阅读大赛特等奖亚军">南开学子获“外研社杯”全国阅读大赛特等奖亚军(2016-12-13)</a></td>
+						</tr>
+											    <tr>
+							<td height="5" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="20" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+							<td height="20"><a href='second.php?act=read&module=12&id=900' target="_blank" style=" " title="我校与伯明翰大学签署本硕联合培养、暑期项目合约">我校与伯明翰大学签署本硕联合培养、暑期项目合约(2016-10-26)</a></td>
+						</tr>
+											    <tr>
+							<td height="5" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="20" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+							<td height="20"><a href='second.php?act=read&module=12&id=899' target="_blank" style=" " title="南开大学2016“梦圆南开 心系母校”社会实践活动获奖名单公示">南开大学2016“梦圆南开 心系母校”社会实践活动获奖名单公示(2016-09-21)</a></td>
+						</tr>
+											    <tr>
+							<td height="5" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="20" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+							<td height="20"><a href='second.php?act=read&module=12&id=897' target="_blank" style=" " title="寒门学子不要怕，南开给你“洪荒之力”">寒门学子不要怕，南开给你“洪荒之力”(2016-08-17)</a></td>
+						</tr>
+											    <tr>
+							<td height="5" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="20" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+							<td height="20"><a href='second.php?act=read&module=12&id=896' target="_blank" style=" " title="感谢社会各界爱心人士共助学生圆梦南开">感谢社会各界爱心人士共助学生圆梦南开(2016-08-17)</a></td>
+						</tr>
+											</table>
+					</td>
+					<td width="58" rowspan="2">　</td>
+					<td rowspan="2" valign="top">
+					<div align="center">
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td height="35">　</td>
+							</tr>
+							<tr>
+								<td>
+								<!--<img border="0" src="images/flash.jpg" width="453" height="266">-->
+								<!--Flash幻灯-->
+								<DIV id="swfnews">
+									<object type="application/x-shockwave-flash" data="flash/bcastr4.swf?xml=flash/bcastr.xml"  width="453" height="266" id="vcastr3">
+									<param name="movie" value="flash/bcastr4.swf?xml=flash/bcastr.xml" />
+									<param name="wmode" value="opaque" />
+									</object>
+								</DIV>
+								<!--Flash幻灯结束-->
+
+								</td>
+							</tr>
+						</table>
+					</div>
+					</td>
+					<td width="27" rowspan="2">　</td>
+				</tr>
+				<tr>
+					<td height="59" width="432" align="center" valign="top">
+					  <a href="second.php?act=list&amp;module=12"></a></td>
+				</tr>
+			</table>
+                        </td>
+                </tr>
+                <tr>
+                        <td width="1000" height="20">　</td>
+                </tr>
+                <tr>
+                        <td width="1000">
+                        <table border="0" cellpadding="0" cellspacing="0" width="1000">
+                                <tr>
+                                        <td width="23">　</td>
+                                        <td width="267" valign="top">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tr>
+                                                        <td>
+                                                        <img border="0" src="images/title1.jpg" width="267" height="29"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="20"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td>
+                                                          <a href="second.php?act=read&amp;module=11&amp;id=299" target="_self"><img src="images/title1_1.gif" alt="招生组联系方式" width="255" height="41" border="0"></a></td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="13"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td>
+                                                          <a href="second.php?act=list&amp;module=42" target="_self"><img src="images/title1_2.gif" alt="分省招生计划" width="255" height="41" border="0"></a></td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="13"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td>
+                                                          <a href="second.php?act=list&amp;module=44" target="_self"><img src="images/title1_3.gif" alt="历年录取情况" width="255" height="41" border="0"></a></td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="36"></td>
+                                                </tr>
+                                        </table>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tr>
+                                                        <td colspan="2">                                                          <img src="images/title2.jpg" alt="招生政策" width="267" height="29" border="0" usemap="#Map2" ></td>
+                                                </tr>
+                                                                                                <tr>
+                                                        <td height="20" colspan="2"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td width="79%" style="line-height: 150%">2017-06-21 10:50:31<br>南开大学2017年本科报考指南</td>
+                                                    <td width="21%" style="line-height: 150%; text-align:right;"><br><a href='second.php?act=read&module=41&id=952' style="color:#519100;" title="南开大学2017年本科报考指南">>> 详细</a></font></td>
+                                                </tr>
+                                                                                                <tr>
+                                                        <td height="20" colspan="2"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td width="79%" style="line-height: 150%">2016-06-17 08:09:21<br>南开大学2016年本科报考指南</td>
+                                                    <td width="21%" style="line-height: 150%; text-align:right;"><br><a href='second.php?act=read&module=41&id=864' style="color:#519100;" title="南开大学2016年本科报考指南">>> 详细</a></font></td>
+                                                </tr>
+                                                                                                <tr>
+                                                        <td height="20" colspan="2"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td width="79%" style="line-height: 150%">2016-05-20 16:52:25<br>南开大学2016年本科生招生章程</td>
+                                                    <td width="21%" style="line-height: 150%; text-align:right;"><br><a href='second.php?act=read&module=41&id=826' style="color:#519100;" title="南开大学2016年本科生招生章程">>> 详细</a></font></td>
+                                                </tr>
+                                                                                                <tr>
+                                                        <td height="30" colspan="2"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td colspan="2">
+                                                          <a href="http://zhshb.nankai.edu.cn/" target="_blank"><img src="images/title2_1.gif" alt="自主招生网上报名" width="255" height="48" border="0"></a></td>
+                                                </tr>
+                                        </table>
+                                        </td>
+                                        <td width="32">　</td>
+                                        <td width="662" valign="top">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tr>
+                                                        <td colspan="5">
+                                                        <img src="images/title3_new.jpg" width="662" height="29" border="0" usemap="#Map"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="20" colspan="5">
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+																<tr>
+																	<td height="10" colspan="2"></td>
+																</tr>
+																																<tr>
+																	<td height="25" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+																	<td height="25" style="line-height: 150%" valign="top"><a href='second.php?act=read&module=11&id=975' target="_blank" style=" font-weight: 700;color: #FF0000;" title="南开大学2017年本科招生公告（十九）——本科招生录取公告">南开大学2017年本科招生公告（十九）——本科招生录取公告(2017-07-31)</a></td>
+																</tr>
+																																<tr>
+																	<td height="25" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+																	<td height="25" style="line-height: 150%" valign="top"><a href='second.php?act=read&module=11&id=972' target="_blank" style=" font-weight: 700;color: #FF0000;" title="南开大学2017年本科招生公告（十八）——录取进展(陆续更新中…)">南开大学2017年本科招生公告（十八）——录取进展(陆续更新中…)(2017-07-23)</a></td>
+																</tr>
+																																<tr>
+																	<td height="25" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+																	<td height="25" style="line-height: 150%" valign="top"><a href='second.php?act=read&module=11&id=971' target="_blank" style=" font-weight: 700;color: #FF0000;" title="南开大学2017年本科招生公告（十七）——招生文件公开">南开大学2017年本科招生公告（十七）——招生文件公开(2017-07-09)</a></td>
+																</tr>
+																																<tr>
+																	<td height="25" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+																	<td height="25" style="line-height: 150%" valign="top"><a href='second.php?act=read&module=11&id=970' target="_blank" style=" font-weight: 700;color: #FF0000;" title="南开大学2017年本科招生公告（十六）——招生录取公告">南开大学2017年本科招生公告（十六）——招生录取公告(2017-07-09)</a></td>
+																</tr>
+																																<tr>
+																	<td height="25" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+																	<td height="25" style="line-height: 150%" valign="top"><a href='second.php?act=read&module=11&id=931' target="_blank" style=" font-weight: 700;color: #FF0000;" title="南开大学2017年本科生招生章程">南开大学2017年本科生招生章程(2017-06-09)</a></td>
+																</tr>
+																																<tr>
+																	<td height="25" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+																	<td height="25" style="line-height: 150%" valign="top"><a href='second.php?act=read&module=11&id=974' target="_blank" style=" font-weight: 700;color: #FF0000;" title="2017年南开大学高校专项反馈表接收情况">2017年南开大学高校专项反馈表接收情况(2017-07-10)</a></td>
+																</tr>
+																																<tr>
+																	<td height="25" width="15"><img border="0" src="images/doc.gif" width="10" height="9"></td>
+																	<td height="25" style="line-height: 150%" valign="top"><a href='second.php?act=read&module=11&id=973' target="_blank" style=" font-weight: 700;color: #FF0000;" title="2017年南开大学自主招生反馈表接收情况">2017年南开大学自主招生反馈表接收情况(2017-07-10)</a></td>
+																</tr>
+																														</table>
+												</td>
+                                                </tr>
+                                                <tr>
+                                                        <td colspan="5" height="20"></td>
+                                                </tr>
+                                                </table>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                <tr>
+                                                        <td>
+                                                        <img src="images/title4.jpg" width="662" height="29" border="0" usemap="#Map3"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="20"></td>
+                                                </tr>
+												                                                <tr>
+                                                        <td style="line-height: 150%"><b>
+                                                        <font color="#519100">问：</font></b><font color="#686868">山东农村专项考了648分，有希望吗 (山东)</font><br>
+                                                        <b><font color="#519100">答：</font></b>您好，如果您是理工类考生，报考我校被录取的希望较大。</td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="5"></td>
+                                                </tr>
+												                                                <tr>
+                                                        <td style="line-height: 150%"><b>
+                                                        <font color="#519100">问：</font></b><font color="#686868">老师您好，我是山东理工科类的考生，高考566，已经通过贵校的农村专项，请问被录取的希望大吗？谢谢 (山东)</font><br>
+                                                        <b><font color="#519100">答：</font></b>您好，根据您的分数，报考我校被录取有希望也有风险。</td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="5"></td>
+                                                </tr>
+												                                                <tr>
+                                                        <td style="line-height: 150%"><b>
+                                                        <font color="#519100">问：</font></b><font color="#686868">老师您好，我参加南开大学自主招生合格，现在想确认一下我的自主招生反馈表学校有没有收到。谢谢老师。 (江西)</font><br>
+                                                        <b><font color="#519100">答：</font></b>您好，已收到您的反馈表。</td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="5"></td>
+                                                </tr>
+												                                                <tr>
+                                                        <td style="line-height: 150%"><b>
+                                                        <font color="#519100">问：</font></b><font color="#686868">老师:你好！浙江艺术类考生，按南开的综合分是608，前几天已经咨询过了，你们回答都说被录取希望很大，现在还是这个问题，请问老师，我孩子被录取的希望如何？最快几号可以查询？谢谢！ (浙江)</font><br>
+                                                        <b><font color="#519100">答：</font></b>您好，录取结果预计本月10日前可查询。</td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="5"></td>
+                                                </tr>
+												                                                <tr>
+                                                        <td style="line-height: 150%"><b>
+                                                        <font color="#519100">问：</font></b><font color="#686868">老师您好，我是江苏理科考生，通过了贵校的自主招生合格线，高考总分369，选科AB+，请问被贵校录取的希望大吗？另外，我的自主招生反馈表已寄达贵校，能否确认一下是否收到，谢谢！ (江苏)</font><br>
+                                                        <b><font color="#519100">答：</font></b>您好，根据您的高考分数和降分政策，报考我校被录取的希望很大，您的反馈表已收到。</td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="5"></td>
+                                                </tr>
+												                                                <!--<tr>
+                                                        <td style="line-height: 150%"><b>
+                                                        <font color="#519100">问：</font></b><font color="#686868">数学试点班加试和基础分别考什么内容或范围？</font><br>
+                                                        <b><font color="#519100">答：</font></b>加试是竞赛的内容，基础就是高考的内容。</td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="5"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td style="line-height: 150%">
+                                                        <font color="#519100"><b>问：</b></font><font color="#686868">学生参加基础笔试后再参加单项加试时是否要换考场？考试用品一定要带钢笔吗？尺圆规和计算器要带吗？</font><br>
+                                                        <b><font color="#519100">答：</font></b>不用换考场。考试带签字笔和铅笔，计算器不允许带，尺随意。</td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="5"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td style="line-height: 150%"><b>
+                                                        <font color="#519100">问：</font></b><font color="#686868">数学试点班加试和基础分别考什么内容或范围？</font><br>
+                                                        <font color="#519100"><b>答：</b></font>自主考试顺序是理科基础，先考基础知识，然后附加题，理科基础结束后是单项加试。</td>
+                                                </tr>
+                                                <tr>
+                                                        <td height="5"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td style="line-height: 150%"><b>
+                                                        <font color="#519100">问：</font></b><font color="#686868">学生参加基础笔试后再参加单项加试时是否要换考场？考试用品一定要带钢笔吗？尺圆规和计算器要带吗？</font><br>
+                                                        <b><font color="#519100">答：</font></b>不用换考场。考试带签字笔和铅笔，计算器不允许带。</td>
+                                                </tr>-->
+                                        </table>
+                                        </td>
+                                        <td width="16"></td>
+                                </tr>
+                        </table>
+                        </td>
+                </tr>
+                <tr>
+                        <td width="1000" height="20"></td>
+                </tr>
+                <tr>
+                        <td width="1000" bgcolor="#C1C1C1" height="1"></td>
+                </tr>
+                <tr>
+                        <td width="1000" bgcolor="#DDDDDD">
+                        <div align="center">
+                                <table border="0" cellpadding="0" cellspacing="0" width="1000" height="142">
+                                        <tr>
+                                                <td width="23" rowspan="3"></td>
+                                          <td width="299" rowspan="3" align="left" style="line-height: 200%">
+                                <span style="font-size: 11pt; font-weight: 700">网址链接</span><br>
+                                                <a href="http://www.nankai.edu.cn" target="_blank">南开大学</a> <a href="http://news.nankai.edu.cn" target="_blank">南开新闻网</a> <a href="http://xgb.nankai.edu.cn" target="_blank">学生工作网</a><br>
+                                        <a href="http://jwc.nankai.edu.cn/" target="_blank">南开教务处</a> <a href="http://xxgk.nankai.edu.cn" target="_blank">信息公开网</a> <a href="http://nkuaa.nankai.edu.cn/" target="_blank">南开校友会</a><br>
+                                                <a href="http://career.nankai.edu.cn" target="_blank">就业信息网</a> <a href="http://www.moe.gov.cn/" target="_blank">教育部</a> 
+                                                <a href="http://gaokao.chsi.cn/" target="_blank">阳光高考</a><br></td>
+                                                <td width="4" height="21"></td>
+                                                <td rowspan="3" width="29">
+                                                　</td>
+                                          <td width="434" rowspan="3" align="left" style="line-height: 200%">
+                                                <span style="font-size: 11pt; font-weight: 700">联系方式</span><br>
+                                                电话：022-23504845　　　　　　　　<a href="mailto:电邮：zhshb@nankai.edu.cn">电邮：zhshb@nankai.edu.cn</a><br>
+                                                传真：022-23508545　　　　　　　　邮编：300071<br>
+                                                地址：天津市南开区卫津路94号 南开大学招生办公室<br>
+                                          招办QQ（校内专用）：2373843995　　<span><img src="images/weibo.gif" alt="微博" title="招办微博" height="20" border="0" style="margin-bottom:-3px;" /><a href="http://e.weibo.com/nankaidaxue" title="招办微博" target="_blank">招办微博</a> <img src="images/weixin.gif" alt="招办微信" title="招办微信" height="20" border="0" style="margin-bottom:-3px;" /><a href="images/qrcode_for_gh_75493b7d05f2_430.jpg" id="weixin" target="_blank" title="南开大学招生办微信">招办微信</a></span></td>
+                                                <td rowspan="3" width="197"><img src="images/weixin_small.jpg" alt="招办微信" width="130" height="130" /></td>
+                                                <td rowspan="3" width="14"></td>
+                                        </tr>
+                                        <tr>
+                                                <td width="4" bgcolor="#B4B4B4" height="100"></td>
+                                        </tr>
+                                        <tr>
+                                                <td width="4" height="21"></td>
+                                        </tr>
+                                </table>
+                        </div>
+                        </td>
+                </tr>
+                <tr>
+                        <td width="1000" height="2"></td>
+                </tr>
+                <tr>
+                        <td width="1000" bgcolor="#6A6A6A" height="52" style="line-height: 150%">
+                        <font color="#FFFFFF">　　南开大学招生办公室 版权所有 |
+                        津教备0061号 津ICP备12003308号-1<br>
+                        　　Copyright @2002-2012 Admission Office. Nankai University All
+                        Rights Reserved </font></td>
+                </tr>
+        </table>
+</div>
+
+
+<map name="Map" id="Map"><area shape="rect" coords="593,2,660,25" href="second.php?act=list&amp;module=11" target="_self" alt="更多内容" title="查看更多内容" />
+</map>
+<map name="Map2" id="Map2"><area shape="rect" coords="189,1,265,28" href="second.php?act=list&amp;module=41" target="_self" alt="更多内容" title="查看更多招生政策" />
+</map>
+<map name="Map3" id="Map3"><area shape="rect" coords="163,2,237,26" href="second.php?act=consult&amp;module=72" target="_self" alt="我要咨询" />
+<area shape="rect" coords="248,2,324,27" href="second.php?act=consult_query&amp;module=73" target="_self" alt="查看回复" />
+<area shape="rect" coords="587,2,662,28" href="second.php?act=consult_list&amp;module=74" target="_self" alt="全部咨询" title="查看更多咨询" />
+</map></body>
+
+</html>

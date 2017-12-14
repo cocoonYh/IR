@@ -1,0 +1,23 @@
+{% extends 'index.html' %} {% load bootstrap3 %} {% block content %}
+<div class="container auto-left" id="results">
+    {% for hit in results %}
+    <h2>
+        <a href="{{ hit.2 }}">{{ hit.0 }}</a>
+    </h2>
+    <div>{{ hit.1 }}</div>
+    {% endfor %}
+</div>
+<style>
+    .match {
+        color: red;
+    }
+
+    a {
+        color: black;
+    }
+
+    .auto-left {
+        margin-left: auto;
+    }
+</style>
+{% endblock %}

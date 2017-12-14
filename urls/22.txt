@@ -1,0 +1,7 @@
+http://www.nankai.edu.cn/webplus3.nankai.edu.cn 管理员登录
+http://yzxt.nankai.edu.cn/intern/frontend/web/gsgradequery/index 硕士成绩查询系统
+http://yzxt.nankai.edu.cn/intern/frontend/web/gs-grade-master-retest/index 硕士复试确认系统
+http://yzxt.nankai.edu.cn/intern/frontend/web/gs-doctor-grade-query/index 博士成绩查询系统
+http://yzxt.nankai.edu.cn/intern/frontend/web/gs-grade-doctor-retest/index 博士复试确认系统
+http://yzb.nankai.edu.cn/2017/1213/c5509a84850/page.htm （新）2018年全国硕士研究...
+http://yzb.nankai.edu.cn/2017/1213/c5509a84850/page.htm （新）2018年全国硕士研究生入学考试南开大...

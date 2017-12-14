@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Web搜索引擎</title>
+    {% load static %}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form-inline" method="post" action="">
+            {% csrf_token %}
+            <p>爬取网页数目:
+                <input type="text" name="num">
+                <input type="submit" value="爬取并分析">
+            </p>
+        </form>
+    </div>
+    <div class="container">
+        <form class="form-inline" method="get" action="{% url 'analyse' %}">
+            <button name="subject" type="submit" value="Submit">建立索引</button>
+        </form>
+    </div>
+    <div class="container">
+        <form class="form-inline" method="post" action="{% url 'search' %}">
+            {% csrf_token %}
+            <input type="text" name="query">
+            <input type="submit" value="搜索">
+        </form>
+    </div>
+    <div class="container">
+        <section>{% block content %}{% endblock %}</section>
+    </div>
+</body>
+
+</html>

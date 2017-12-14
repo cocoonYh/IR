@@ -1,0 +1,429 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>南开大学人事处</title>
+<meta name="description" content="南开大学人事处" />
+<meta name="keywords" content="南开大学人事处" />
+
+<link rel="stylesheet" type="text/css" href="/templets/nk/css/css.css">
+
+<style type="text/css"> 
+ 
+#show{width:352px; float:left; height:300px; border:2px solid #1B9AC7;}
+#kinMaxShow{width:312px !important; height:252px !important; visibility:hidden; overflow:hidden; margin:25px auto;}
+#kinMaxShow p.title{ position:absolute; left:0; bottom:0; text-indent:10px; line-height:30px;font-family:Verdana; color:#FFF; display:block;width:100%; height:30px; font-family:14px;filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#aa000000,endcolorstr=#aa000000);background:rgba(0,0,0,0.5);}
+</style>
+
+<script src="/templets/nk/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/templets/nk/js/jquery.kinMaxShow-1.1.min.js" type="text/javascript"  charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	
+$("#kinMaxShow").kinMaxShow({
+		height:252,
+		button:{
+				showIndex:true,
+				normal:{width:'18px',height:'18px',lineHeight:'18px',right:'16px',bottom:'6px',fontSize:'12px',opacity:0.8,background:"#666666",border:"1px solid #999999",color:"#CCCCCC",marginRight:'6px'},
+				focus:{background:"#CC0000",border:"1px solid #FF0000",color:"#000000"}
+			}			
+	});
+
+
+});
+
+</script>
+
+
+</head>
+
+<body>
+<!--head start-->
+<script type="text/javascript" src="/templets/nk/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="/templets/nk/js/jquery.jslides.js"></script>
+<script language="javascript" type="text/javascript">
+	    $(function(){
+	        var request = {
+		      QueryString: function (val) {
+		                var uri = window.location.search;
+		                var re = new RegExp("" + val + "\=([^\&\?]*)", "ig");
+		                return ((uri.match(re)) ? (uri.match(re)[0].substr(val.length + 1)) : null);
+		            }
+		        }
+		        var type = request.QueryString("type_nk");
+		        if(type=='nkid'){
+		          $("#messager").html("用户名或密码错误");
+		        }else{
+		          $("#messager").html("");
+		        }
+	    });
+		function login(){
+			if(document.getElementById("outUserName").value.length == 0){
+				alert("用户名不能为空!");
+				document.getElementById("outUserName").focus();
+				return;
+			}
+			
+			with (document.getElementById("myform")) {
+				method = "post";
+				action = "http://recruitment.nankai.edu.cn/webhr/loginRenShi.do";
+				submit();
+			}
+		}	
+	</script>  
+<style>
+#full-screen-slider { width:100%; height:302px; float:left; position:relative}
+#slides { display:block; width:100%; height:302px; list-style:none; padding:0; margin:0; position:relative}
+#slides li { display:block; width:100%; height:100%; list-style:none; padding:0; margin:0; position:absolute}
+#slides li a { display:block; width:100%; height:100%; text-indent:-9999px}
+#pagination { display:block; list-style:none; position:absolute; left:50%; top:270px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
+#pagination li { display:block; list-style:none; width:10px; height:10px; float:left; margin-left:15px; border-radius:5px; background:#FFF }
+#pagination li a { display:block; width:100%; height:100%; padding:0; margin:0;  text-indent:-9999px;}
+#pagination li.current { background:#0092CE}
+</style>
+
+
+<div class="top1">
+	<div style="width:1002px; margin:0 auto; text-align:right;">
+		<a href="#" onClick="this.style.behavior='url(#default#homepage)';this.sethomepage('http://www.xxx.com');"/>设为首页</a>|
+		<a href="javascript:window.external.AddFavorite('http://www.xxx.com','xxx！')" />加入收藏</a>|
+		<a href="">网站地图</a>
+	</div>
+</div>
+
+<div class="top">
+	<div style="width:1002px; margin:0 auto;">
+		<a href="/" style="display:block; float:left;"><img src="/templets/nk/images/logo.jpg" /></a>
+		<div class="ty">
+  <!--<form action="login" method="post" id="myform" name="myform">
+  <ul style="margin-top:30px; height:34px; margin-left:20px;">
+    <li style="height:21px; line-height:21px; float:left;"><label>用户名：</label><input type="text" name="username" id="outUserName"></li>
+  </ul>
+   <ul style="margin-top:0px; height:34px; margin-left:20px;">
+    <li style="height:21px; line-height:21px; float:left;"><label>密&nbsp;&nbsp;码：</label><input type="password" name="password" id="outUserPwd"></li>
+  </ul>
+    <ul style="margin-top:0px; height:34px; margin-left:20px;">
+  <li style="height:21px; line-height:21px; float:left;margin-left:20px;"><a href="http://recruitment.nankai.edu.cn/webhr/nkRegisterNew.jsp"><u style="color:blue;">注册新用户</u></a>
+       <a class="newuser" href="http://recruitment.nankai.edu.cn/webhr/ForgetEmail.jsp"><u style="color:blue;">忘记密码</u></a></li>
+    <li style="height:21px; line-height:21px; float:left;margin-left:5px;"><input type="button" style="width:60px;height:23px;background-color: #1e4f7e;background-image: -moz-linear-gradient(center top , #2672ae, #1e4f7e);color: white;" value="登录" id="dl" onmousedown="login()" name="dl"></li>
+    <li style="height:21px; line-height:21px; float:left;margin-left:0px;font-size: 12px; color: red;"" id="messager"></li>
+  </ul>
+  </form>-->
+  <div id="img" style="float:left;margin-left:15px;height:100px;width:120px;">
+		<img src="/templets/nk/images/qrcode.jpg" style="margin-left:5px;" width="120px" height="120px" />
+		<b style="margin-left:20px">南开大学人事人才</b>
+	</div>
+</div>
+		<div class="ty">
+			<ul style="margin-top:30px; height:34px; margin-left:20px;">
+            	<li style="height:21px; line-height:21px; float:left;"><a href="/" style="padding:0 15px;">中文版</a></li>
+               <!-- <li style="height:21px; line-height:21px; float:left;"><img src="/templets/nk/images/yw.jpg" style="float:left;" /><a href="/English/" style="padding:0 15px;">English</a></li> -->
+		<li style="height:21px; line-height:21px; float:left;"><a href="/english" style="padding:0 15px;">English</a></li>
+            </ul>
+			
+				<form method="GET" action="/plus/search.php" class="clearfix">
+					<input type="hidden" name="id" value="4"/>
+					<input type="hidden" name="m" value="Search"/>
+					<input type="hidden" name="l" value="cn" />
+					<input type="text" name="keyword" value="" onblur="if(this.value==''){this.value='请输入关键字';}" onfocus="if(this.value=='请输入关键字'){this.value=''}" class="seach_cha" style="float:left;" />
+					<input type="hidden" name="module" value="Product" />
+					<input type="submit" value="" class="seach_dian" style="float:right;"/>
+				</form>
+		</div>
+		<div class="c"></div>
+	</div>
+</div>
+
+<div class="nav">
+	<div style="width:1002px; margin:0 auto;">
+<script type="text/javascript">
+  function showDiv(num){
+	for(var id = 1;id<=20;id++)
+	 {
+	  var ss="emo"+id;
+	  if(id==num){
+	   document.getElementById(ss).style.display="block";
+	  }else{
+	   document.getElementById(ss).style.display="none";
+	  }
+	 }  
+	}
+</script>
+ <script language="javascript" type="text/javascript"> 
+     //显示层 
+     function showDiv(divName) 
+     { 
+     document.getElementById(divName).style.display = "block"; 
+     } 
+     //隐藏层 
+     function hiddenDiv(divName) 
+     { 
+     document.getElementById(divName).style.display = "none"; 
+     } 
+    </script> 
+    
+		<ul class="dh">
+			<li><a href="/">网站首页</a></li>
+			<li onmouseover="showDiv('div1')" onmouseout="hiddenDiv('div1')"><a href="/news/">通知公告</a></li>
+			<li onmouseover="showDiv('div5')" onmouseout="hiddenDiv('div5')"><a href="/org/">机构设置</a></li>
+			<li onmouseover="showDiv('div2')" onmouseout="hiddenDiv('div2')"><a href="/job/">招聘引进</a></li>
+			<li onmouseover="showDiv('div3')" onmouseout="hiddenDiv('div3')"><a href="/teacher/">师资管理</a></li>
+			<li onmouseover="showDiv('div4')" onmouseout="hiddenDiv('div4')"><a href="/jobs/">岗位设置</a></li>
+			<li onmouseover="showDiv('div6')" onmouseout="hiddenDiv('div6')"><a href="/process/">办事流程</a></li>
+			<li onmouseover="showDiv('div7')" onmouseout="hiddenDiv('div7')"><a href="/dowm/">资料下载</a></li>
+			<li onmouseover="showDiv('div8')" onmouseout="hiddenDiv('div8')"><a href="/contact/">联系我们</a></li>
+            
+<div id="div2" onmouseover="showDiv(this.id)" onmouseout="hiddenDiv(this.id)"> 
+<a href="/job/yinjinrencai/" class="style">引进人才</a>
+<a href="/job/renyuanzhaopin/" class="style">人员招聘</a>
+<a href="/job/rencaixiangmushenbao/" class="style">人才项目</a>
+<a href="/job/boshihou/" class="style">博士后</a>
+</div>
+
+<div id="div3" onmouseover="showDiv(this.id)" onmouseout="hiddenDiv(this.id)"> 
+<a href="/teacher/zhichenpingshen/" class="style">职称评审</a>
+<a href="/teacher/gangweikaohe/" class="style">岗位考核</a>
+<a href="/teacher/pingjiangpingyou/" class="style">评奖评优</a>
+<a href="/teacher/peiyangpeixun/" class="style">培养培训</a>
+</div>
+
+<div id="div4" onmouseover="showDiv(this.id)" onmouseout="hiddenDiv(this.id)"> 
+<a href="/jobs/gangweiguanli/" class="style">岗位管理</a>
+<a href="/jobs/hetongguanli/" class="style">合同管理</a>
+<a href="/jobs/renyuanliudong/" class="style"> 人员流动</a>
+<a href="/jobs/linshiyonggong/" class="style">临时用工</a>
+</div>
+
+<div id="div7" onmouseover="showDiv(this.id)" onmouseout="hiddenDiv(this.id)"> 
+<a href="/dowm/gaojirencai/" class="style">高级人才</a>
+<a href="/dowm/zhuanyejishu/" class="style">专业技术</a>
+<a href="/dowm/liudongdiaopei/" class="style">流动调配</a>
+<a href="/dowm/gongzifuli/" class="style">工资福利</a>
+<a href="/dowm/boshihou/" class="style">博士后</a>
+<a href="/dowm/xueshuxuefeng/" class="style">学术学风</a>
+<a href="/dowm/danganguanli/" class="style">档案管理</a>
+<a href="/dowm/liliaobaoxian/" class="style">医疗保险</a>
+</div>
+
+		</ul>
+		<div class="c"></div>
+	</div>
+</div>
+
+<div class="banner">
+<!-- 代码 开始 -->
+<a href="../news/141.html"><div id="full-screen-slider">
+	<ul id="slides">
+    	<li style="background:url('/uploads/160511/1-1605111605352R.jpg') no-repeat center top"></li>
+<li style="background:url('/uploads/allimg/140722/141210/1-141210110232960.jpg') no-repeat center top"></li>
+<li style="background:url('/uploads/allimg/140722/1-140H21352330-L.jpg') no-repeat center top"></li>
+
+	</ul>
+</div></a>
+<!-- 代码 结束 -->
+</div>
+<!--head end-->
+
+<!--
+<div style="margin:0 auto; width:1002px;" class="lj">
+	<a href="/a/salary/"><img src="/templets/nk/images/m1.jpg" /></a>
+	<a href="/medical/"><img src="/templets/nk/images/m2.jpg" /></a>
+	<a href="/postdoctoral/"><img src="/templets/nk/images/m3.jpg" /></a>
+	<a href="/academic/"><img src="/templets/nk/images/m4.jpg" /></a>
+	<a href="/personnel/"><img src="/templets/nk/images/m5.jpg" /></a>
+	<a href="/a/shishixinwen/"><img src="/templets/nk/images/m6.jpg" /></a>
+</div>
+-->
+
+<!--
+<div style="background:#1B9AC7; width:100%; height:87px;">
+	<div style="width:40px; margin:0 auto;">
+	<img src="/templets/nk/images/img1.jpg" />
+	</div>
+</div>
+-->
+
+<div style="width:1002px; margin:33px auto 0;">
+<div id="show">
+        <div id="kinMaxShow">
+        	<div>
+                <a href="/a/imgnews/228.html" title=" 重磅来袭！百青系列学术论坛之" target="_black"><img src="/uploads/151124/1-151124215H9259.jpg" width="312" height="252" /></a>
+            </div>
+<div>
+                <a href="/a/imgnews/226.html" title=" 重磅来袭！百青系列学术论坛之" target="_black"><img src="/uploads/151124/1-151124155013646-lp.jpg" width="312" height="252" /></a>
+            </div>
+<div>
+                <a href="/a/imgnews/212.html" title=" 重磅来袭！百青系列学术论坛之" target="_black"><img src="/uploads/151111/1-15111120363A94-lp.jpg" width="312" height="252" /></a>
+            </div>
+<div>
+                <a href="/a/imgnews/209.html" title="“百名青年学科带头人培养计划”" target="_black"><img src="/uploads/151108/1-15110QF13OU.jpg" width="312" height="252" /></a>
+            </div>
+<div>
+                <a href="/a/imgnews/196.html" title=" 重磅来袭！百青系列学术论坛开" target="_black"><img src="/uploads/151105/1-151105142301541.jpg" width="312" height="252" /></a>
+            </div>
+<div>
+                <a href="/a/imgnews/81.html" title="人事处党支部举办第三期双周论坛" target="_black"><img src="/uploads/allimg/140722/1-140H21551110-L.jpg" width="312" height="252" /></a>
+            </div>
+<div>
+                <a href="/a/imgnews/80.html" title="人事处党支部召开专题民主生活会" target="_black"><img src="/uploads/allimg/140722/1-140H21550250-L.jpg" width="312" height="252" /></a>
+            </div>
+<div>
+                <a href="/a/imgnews/79.html" title="人事处党支部举办第五期双周论坛" target="_black"><img src="/uploads/allimg/140722/1-140H21545440-L.jpg" width="312" height="252" /></a>
+            </div>
+
+        </div>
+    
+    </div>
+	
+	<DIV id=con>
+		<UL id=tags>
+			<LI class=selectTag><A onClick="selectTag('tagContent0',this)" href="javascript:void(0)">通知公告</A> </LI>
+<!--			<LI><A onClick="selectTag('tagContent1',this)" href="javascript:void(0)">招聘引进</A> </LI>
+			<LI><A onClick="selectTag('tagContent2',this)" href="javascript:void(0)">师资管理</A> </LI>
+			<LI><A onClick="selectTag('tagContent3',this)" href="javascript:void(0)">岗位设置</A> </LI>
+			<LI><A onClick="selectTag('tagContent4',this)" href="javascript:void(0)">办事流程</A> </LI>-->
+		</UL>
+	
+		<DIV id=tagContent>
+			<DIV class="tagContent selectTag" id=tagContent0>
+				<ul>
+					<li  class="jc" style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/news/439.html" title="拟聘用人选公示" target="_black">拟聘用人选公示</a><span style="float:right;width:80px;">2017-12-06</span></li>
+<li  class="jc" style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/news/440.html" title="拟聘任人选公示" target="_black">拟聘任人选公示</a><span style="float:right;width:80px;">2017-12-06</span></li>
+<li  class="jc" style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/news/438.html" title="关于2017年度“南开大学百名青年学科带头人培养计划”入选人员名" target="_black">关于2017年度“南开大学百名青年学科带头人培养计划”入选人员名</a><span style="float:right;width:80px;">2017-12-05</span></li>
+<li  class="jc" style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/news/436.html" title="关于报送国际组织、国际性学术组织兼职（任职）情况的通知" target="_black">关于报送国际组织、国际性学术组织兼职（任职）情况的通知</a><span style="float:right;width:80px;">2017-11-30</span></li>
+<li  class="jc" style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/news/435.html" title="南开大学津南校区实验动物中心公开招聘主任公告" target="_black">南开大学津南校区实验动物中心公开招聘主任公告</a><span style="float:right;width:80px;">2017-11-29</span></li>
+<li  class="jc" style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/news/434.html" title="南开大学津南校区实验动物中心公开招聘常务副主任的公告" target="_black">南开大学津南校区实验动物中心公开招聘常务副主任的公告</a><span style="float:right;width:80px;">2017-11-29</span></li>
+<li  class="jc" style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/news/433.html" title="拟聘用人选公示" target="_black">拟聘用人选公示</a><span style="float:right;width:80px;">2017-11-17</span></li>
+<li  class="jc" style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/news/432.html" title=" 关于 “百名青年学科带头人培养计划”入选教师中期、期末考核的 " target="_black"><strong>关于 “百名青年学科带头人培养计划”入选教师中期、期末考核的</strong></a><span style="float:right;width:80px;">2017-11-15</span></li>
+
+				</ul>
+				<a href="/news/" style="display:block; float:right; margin-top:219px; font-size:14px;">更多&gt;&gt;</a>
+				<div class="c"></div>
+			</DIV>
+<!--			<DIV class=tagContent id=tagContent1>
+				<ul>
+					<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/job/yinjinrencai/344.html" title="关于对我校2016年度“长江学者奖励计划”推荐申报人选" target="_black">关于对我校2016年度“长江学者奖励计划”推荐申报人选</a><span style="float:right;width:80px;">2016-07-08</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/job/boshihou/166.html" title="流动站介绍" target="_black">流动站介绍</a><span style="float:right;width:80px;">2015-06-30</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/job/rencaixiangmushenbao/49.html" title="各类人才项目申报程序" target="_black">各类人才项目申报程序</a><span style="float:right;width:80px;">2014-07-22</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/job/yinjinrencai/45.html" title="人才引进工作程序" target="_black">人才引进工作程序</a><span style="float:right;width:80px;">2014-07-22</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/job/yinjinrencai/44.html" title="聘任南开大学讲座教授流程" target="_black">聘任南开大学讲座教授流程</a><span style="float:right;width:80px;">2014-07-22</span></li>
+
+				</ul>
+				
+				<a href="/job/" style="display:block; float:right; margin-top:219px; font-size:14px;">更多&gt;&gt;</a>
+				<div class="c"></div>
+			</DIV>
+			<DIV class=tagContent id=tagContent2>
+				<ul>
+					<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/teacher/peiyangpeixun/62.html" title="国家公派高级研究学者及访问学者（含博士后）项目录取" target="_black">国家公派高级研究学者及访问学者（含博士后）项目录取</a><span style="float:right;width:80px;">2014-07-22</span></li>
+
+				</ul>
+				<a href="/teacher/" style="display:block; float:right; margin-top:219px; font-size:14px;">更多&gt;&gt;</a>
+				<div class="c"></div>
+			</DIV>
+			<DIV class=tagContent id=tagContent3>
+				<ul>
+					<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/jobs/linshiyonggong/78.html" title="南开大学非事业编制用工管理工作程序" target="_black">南开大学非事业编制用工管理工作程序</a><span style="float:right;width:80px;">2014-07-22</span></li>
+
+				</ul>
+				<a href="/jobs/" style="display:block; float:right; margin-top:219px; font-size:14px;">更多&gt;&gt;</a>
+				<div class="c"></div>
+			</DIV>
+			<DIV class=tagContent id=tagContent4>
+				<ul>
+					<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/process/169.html" title="南开大学博士后研究人员申请及进站办理程序" target="_black">南开大学博士后研究人员申请及进站办理程序</a><span style="float:right;width:80px;">2015-10-25</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/process/170.html" title="南开大学博士后研究人员出站程序" target="_black">南开大学博士后研究人员出站程序</a><span style="float:right;width:80px;">2015-08-07</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/process/76.html" title="南开大学教职工调出、辞职工作程序" target="_black">南开大学教职工调出、辞职工作程序</a><span style="float:right;width:80px;">2014-09-22</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/process/75.html" title="南开大学因私出国（境）人员登记备案工作程序" target="_black">南开大学因私出国（境）人员登记备案工作程序</a><span style="float:right;width:80px;">2014-07-22</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/process/22.html" title="南开大学教职工调出、辞职工作程序" target="_black">南开大学教职工调出、辞职工作程序</a><span style="float:right;width:80px;">2014-07-18</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/process/20.html" title="南开大学流动编、复聘岗管理工作程序" target="_black">南开大学流动编、复聘岗管理工作程序</a><span style="float:right;width:80px;">2014-07-18</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/process/19.html" title="南开大学非事业编制用工管理工作程序" target="_black">南开大学非事业编制用工管理工作程序</a><span style="float:right;width:80px;">2014-07-18</span></li>
+<li style=" background:url(/templets/nk/images/jt.jpg) no-repeat left center; text-indent:10px;"><a href="/process/18.html" title="南开大学教职工退休工作程序" target="_black">南开大学教职工退休工作程序</a><span style="float:right;width:80px;">2014-07-18</span></li>
+
+				</ul>
+				<a href="/process/" style="display:block; float:right; margin-top:219px; font-size:14px;">更多&gt;&gt;</a>
+				<div class="c"></div>
+			</DIV>-->
+		</DIV>
+	</DIV>
+
+
+  <SCRIPT type=text/javascript>
+function selectTag(showContent,selfObj){
+	// 操作标签
+	var tag = document.getElementById("tags").getElementsByTagName("li");
+	var taglength = tag.length;
+	for(i=0; i<taglength; i++){
+		tag[i].className = "";
+	}
+	selfObj.parentNode.className = "selectTag";
+	// 操作内容
+	for(i=0; j=document.getElementById("tagContent"+i); i++){
+		j.style.display = "none";
+	}
+	document.getElementById(showContent).style.display = "block";
+	
+	
+}
+</SCRIPT>
+
+	<div class="c"></div>
+</div>
+
+<div style=" height:40px; width:100%; background:#1B9AC7; margin-top:23px;"></div>
+
+<div style="background:#EBEBEB; width:100%; height:187px;">
+	<div style="width:944px; height:187px; margin:0 auto; background:url(/templets/nk/images/img2.jpg) no-repeat top center;">
+		<a href="/academic/" style=" width:170px; height:187px; display:block; float:left; margin-left:30px;"></a>
+		<a href="/medical/" style=" width:170px; height:187px; display:block; float:left; margin-left:30px;"></a>
+		<a href="/salary/" style=" width:170px; height:187px; display:block; float:left; margin-left:135px;"></a>
+		<a href="/personnel/" style=" width:170px; height:187px; display:block; float:left; margin-left:30px;"></a>
+		<div class="c"></div>
+	</div>
+</div>
+
+<!--foot start-->
+<div class="yq">
+	<div style="width:1002px; margin:0 auto;">
+		<p>友情链接：</p>
+		<ul>
+			
+			<li>|</li>
+			<li><a href='http://www.nankai.edu.cn' target='_blank'>南开大学</a> </li>
+			
+			<div class="c"></div>
+		</ul>
+		<div class="c"></div>
+	</div>
+</div>
+
+<div class="foot">
+	
+	<div class="copy">
+		地址：天津市南开区卫津路94号<br/>
+电话：022-23501215&nbsp;&nbsp;<br/>
+皖ICP备12003308号-1  <a href=http://www.dedecms.com target='_blank'>Power by DedeCms</a>
+	</div>
+	
+	<div class="fx">
+		<div style="float:left;"><img src="/templets/nk/images/fx.jpg" /></div>
+		<div class="bshare-custom icon-medium-plus" style="float:left;">
+			<div class="bsPromo bsPromo2"></div>
+			<a title="分享到QQ空间" class="bshare-qzone"></a>
+			<a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+			<a title="分享到人人网" class="bshare-renren"></a>
+			<a title="分享到腾讯微博" class="bshare-qqmb"></a>
+			<a title="分享到网易微博" class="bshare-neteasemb"></a>
+			<a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+			</div>
+<script type="text/javascript" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"></script>
+<script type="text/javascript" src="http://static.bshare.cn/b/bshareC0.js"></script>
+		</div>
+	
+</div>
+<!--foot end-->
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>南开大学现代远程教育学院</title>
+</head>
+
+<body>
+<script type="text/javascript"> 
+function getvalue(name)
+{
+ var str=window.location.search;
+ if (str.indexOf(name)!=-1)
+ {
+  var pos_start=str.indexOf(name)+name.length+1;
+  var pos_end=str.indexOf("&",pos_start);
+  if (pos_end==-1)
+  {
+   return str.substring(pos_start);
+  }
+  else
+  {
+   return str.substring(pos_start,pos_end)
+  }
+ }
+ else
+ {
+  return "没有这个name值";
+ }
+}
+	if(getvalue("errno")==1)
+	{
+	
+	 var autourl=new Array("","http://202.113.31.240/system/index/index.php?xl=1&errno=1","http://60.29.89.124system/index/index.php?xl=2&errno=1","http://221.238.132.44/system/index/index.php?xl=3&errno=1");
+	}
+	else
+	{
+	var autourl=new Array("","http://202.113.31.240/system/index/index.php?xl=1","http://60.29.89.124/system/index/index.php?xl=2","http://221.238.132.44/system/index/index.php?xl=3");
+	}
+	 var i=1 ;
+    function auto(url){ 
+    if(i){i=0;top.location=url;} 
+    } 
+    function run(){ 
+		setTimeout(def,5000);
+    for(var i=1;i<autourl.length;i++)  
+     document.write("<img src='"+autourl[i]+"' width=1 height=1 onerror=auto('"+autourl[i]+"')>") 
+    } 
+		function def()
+		{
+			location.href="http://202.113.31.240/system/index/index.php?xl=1";
+		}
+    run(); 
+</script>
+<h2 align="center">正在查找通往<font color="#9900FF">南开大学现代远程教育学院</font>的最佳线路，请稍候……</h2>
+<h3 align="center">点击直接访问：&nbsp;&nbsp;<a href="http://202.113.31.240/system/index/index.php?xl=1">教育网</a>&nbsp;&nbsp;&nbsp;
+<a href="http://60.29.89.124/system/index/index.php?xl=2">联通</a>&nbsp;&nbsp;&nbsp;
+<a href="http://221.238.132.44/system/index/index.php?xl=3">电信</a>&nbsp;&nbsp;&nbsp;
+</h3>
+</body>
+</html>

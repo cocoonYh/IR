@@ -1,0 +1,842 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NKU讲座网</title>
+<meta name="Description" content="愿为你提供最精彩的南开讲座信息">
+<script type="text/javascript" src="js/jquery.js" ></script>
+	<script type="text/javascript" src="js/jquery.easing.js" ></script>
+	<script type="text/javascript" src="js/tongji.js" ></script>
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="icon" href="logo.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="css/label.css">
+	<link rel="shortcut icon" href="logo.ico"><link rel="Bookmark" href="aa.ico">
+	<link rel="SHORTCUT ICON" href="logo.ico"/>  
+<script type="text/javascript">
+$(document).ready(function(){
+
+    var pic_width=750;
+  
+	var word_width=250;
+    var ent_num=0;
+	var ent_zu_num=Math.floor(($(".cai_word li").length-1)/4);
+	 var jing_num=0;
+	var jing_zu_num=Math.floor(($(".jingcai li").length-1)/5);
+	
+	var kv_num = 0;
+	var pic_num=$(".kv_pic li").length;
+	$(".entleft").hide();
+	$(".jingleft").hide();
+	if(ent_zu_num==0){$(".entright").hide();
+	}
+	if(jing_zu_num==0){$(".jingright").hide();
+	}
+	
+	
+	$(".cai_word").css("width",function(){  
+  return (ent_zu_num+1)*1000+ "px";  
+});
+	$(".jingcai").css("width",function(){  
+  return (jing_zu_num+1)*1000+ "px";  
+});
+	
+	$(".kv_pic").css("width",function(){  
+  return pic_num*pic_width+ "px";  
+});
+    
+	for(var i=0;i<pic_num-1;i++){
+	$(".kv_dot ul").append("<li></li>");
+	}
+	function nextKv(){
+		$(".control").attr("style","pointer-events:none");
+		kv_num++;
+		if(kv_num==pic_num){kv_num=0;}
+		$(".kv_pic").animate({ left:-pic_width*kv_num},{ easing: 'easeInOutQuad', duration: 500, complete: function(){
+			$(".control").attr("style","pointer-events:auto");
+		}}); 
+		$(".kv_word>ul").stop().animate({ left:-word_width*kv_num},{ easing: 'easeInOutQuad', duration: 500, complete: function(){}}); 
+		$(".kv_dot ul li").removeClass("action").eq(kv_num).addClass("action");
+	}
+	function prevKv(){
+		$(".control").attr("style","pointer-events:none");
+		kv_num--;
+		if(kv_num==-1){kv_num=pic_num-1;}
+		$(".kv_pic").animate({ left:-pic_width*kv_num},{ easing: 'easeInOutQuad', duration: 500, complete: function(){
+			
+			$(".control").attr("style","pointer-events:auto");
+		}}); 
+		$(".kv_word>ul").stop().animate({ left:-word_width*kv_num},{ easing: 'easeInOutQuad', duration: 500, complete: function(){}}); 
+	}
+	$(".control .next").on("click",nextKv);
+	$(".control .prev").on("click",prevKv);
+	
+	// 自动轮播
+	setInterval(nextKv,7500);
+	function nextent(){
+		$(".con1").attr("style","pointer-events:none");
+		ent_num++;
+		
+		$(".cai_word").animate({ left:-1000*ent_num},{ easing: 'linear', duration: 500, complete: function(){
+			$(".con1").attr("style","pointer-events:auto");
+			if(ent_num==ent_zu_num){$(".entright").hide();}
+		if(ent_num==1){$(".entleft").show();}
+		}}); 
+	}
+	function prevent(){
+		$(".con1").attr("style","pointer-events:none");
+		ent_num--;
+		
+		$(".cai_word").animate({ left:-1000*ent_num},{ easing: 'linear', duration: 500, complete: function(){
+			
+			$(".con1").attr("style","pointer-events:auto");
+			if(ent_num==0){$(".entleft").hide();}
+		if(ent_num==ent_zu_num-1){$(".entright").show();}
+		}});  
+	}
+	$(".entleft").on("click",prevent);
+	$(".entright").on("click",nextent);
+	
+	function nextjing(){
+		$(".con2").attr("style","pointer-events:none");
+		jing_num++;
+		
+		$(".jingcai").animate({ left:-1000*jing_num},{ easing: 'easeInOutQuad', duration: 500, complete: function(){
+			$(".con2").attr("style","pointer-events:auto");
+			if(jing_num==jing_zu_num){$(".jingright").hide();}
+		if(jing_num==1){$(".jingleft").show();}
+		}}); 
+	}
+	function prevjing(){
+		$(".con2").attr("style","pointer-events:none");
+		jing_num--;
+		
+		$(".jingcai").animate({ left:-1000*jing_num},{ easing: 'easeInOutQuad', duration: 500, complete: function(){
+			
+			$(".con2").attr("style","pointer-events:auto");
+			if(jing_num==0){$(".jingleft").hide();}
+		if(jing_num==jing_zu_num-1){$(".jingright").show();}
+		}});  
+	}
+	$(".jingleft").on("click",prevjing);
+	$(".jingright").on("click",nextjing);
+	
+	for(i = 0; i< $(".jishu").attr('id'); i++){
+		$(".con1").attr("style","pointer-events:none");
+		ent_num++;
+		
+		$(".cai_word").animate({ left:-1000*ent_num},{ easing: 'linear', duration: 500, complete: function(){
+			$(".con1").attr("style","pointer-events:auto");
+			if(ent_num==ent_zu_num){$(".entright").hide();}
+		if(ent_num==1){$(".entleft").show();}
+		}});
+	}
+	
+});	
+</script>
+</head>
+<body  onload= "">
+
+
+<div class="main header clear">
+<div class="left">
+<img  src="img/2.png"  class="logo-img" onclick="window.location.href='first.jsp'"/>
+</div>
+<div class="left" style="margin-top:10px;font-size:15px;">
+ 	<a href="first.jsp" class="title color-zi">讲座网</a>
+ 	<a href="first.jsp"class="caidan" style="margin-left:20px">首页</a>
+  	<a href="latestshow.action" class="caidan">最新讲座</a>
+   	<a href="list.action" class="caidan">精彩回顾</a>
+    <a href="organizerall.action" class="caidan">排行榜</a>
+    <a href="download.jsp" class="caidan">审批表下载</a>
+</div>
+ <div class="searchbox right">
+ <form action="search.action" method="post">
+ <input class="search" name="query"></input>
+ <input type="submit" class="icon iconfont find" value="&#xe600;" style="background-color:rgba(0,0,0,0);border:none"></form>
+ </div> 
+</div>
+<div class="main" >
+<div class="kv">
+<!--  图片格式750*300-->
+		<ul class="kv_pic">
+		   <li><img src="/upload/386/648161036245556182.jpg" alt="学习全国思想政治工作会议精神>" onclick="window.location.href='newfindbyid.action?id=386'"/></li><li><img src="/upload/376/2222.jpg" alt="校院中心组举行理论学习报告会>" onclick="window.location.href='newfindbyid.action?id=376'"/></li><li><img src="/upload/194/812317087696952345.jpg" alt="对柳永词毁誉之评议>" onclick="window.location.href='newfindbyid.action?id=194'"/></li><li><img src="/upload/284/689562459901403739.jpg" alt="感悟数学之美>" onclick="window.location.href='newfindbyid.action?id=284'"/></li>
+		  
+		
+		
+		</ul>
+		<!--  标题20字内 内容摘要100字内-->
+		<div class="kv_word">
+			<ul>
+			 <li onclick="window.location.href='newfindbyid.action?id=386'">
+					<h4 class="tit1" id="tit11">
+						
+								学习全国思想政治工作会议精神
+						
+					</h4>
+					
+					<p>
+					  	
+								学习全国思想政治工作会议精神
+时间：2017年2月14日(周二) 16：00
+校区：八里台校区
+地点：南开大学
+主讲人：龚克 （南开大学）
+						
+					  <br><a href="newfindbyid.action?id=386">详情 ></a></p>
+				</li><li onclick="window.location.href='newfindbyid.action?id=376'">
+					<h4 class="tit1" id="tit11">
+						
+								校院中心组举行理论学习报告会
+						
+					</h4>
+					
+					<p>
+					  	
+								12月14日，校院党委理论学习中心组在八里台校区省身楼报告厅集体学习党的十八届六中全会精神和全国高校思想政治工作会议精神。
+						
+					  <br><a href="newfindbyid.action?id=376">详情 ></a></p>
+				</li><li onclick="window.location.href='newfindbyid.action?id=194'">
+					<h4 class="tit1" id="tit11">
+						
+								对柳永词毁誉之评议
+						
+					</h4>
+					
+					<p>
+					  	
+								   叶嘉莹，号迦陵。1924年7月出生于北京的一个书香世家，南开大学中华古典文化研究所所长，博士生导师，加拿大籍中国古典文学专家，加拿大皇家学会院士，曾任台湾...		
+						
+					  <br><a href="newfindbyid.action?id=194">详情 ></a></p>
+				</li><li onclick="window.location.href='newfindbyid.action?id=284'">
+					<h4 class="tit1" id="tit11">
+						
+								感悟数学之美
+						
+					</h4>
+					
+					<p>
+					  	
+								主办单位：数学学院 
+开始时间：2016-07-15 
+所在校区：八里台校区
+举办地点：天津博物馆报告厅 
+主讲人：顾沛
+						
+					  <br><a href="newfindbyid.action?id=284">详情 ></a></p>
+				</li>
+			
+			
+			</ul>
+		</div>
+		<div class="control">
+			<div class="prev"><img src="img/icons_move_left.png" alt="" /></div>
+			<div class="next"><img src="img/icons_move_right.png" alt="" /></div>
+		</div>
+		<div class="kv_dot">
+			<ul>
+				<li class="action"></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="main" style="margin-bottom:100px">
+  <div class="clear main-tit clear" style="height:34px">
+    <div class="left ">
+	<h5>最新讲座</h5>
+	</div>
+	<div class="right" style="height:34px">
+	<img class="con1 entleft" src="img/9.png" alt="" />
+	<img class="con1 entright" src="img/8.png" alt="" />
+	</div>
+  </div>
+   <div style="position:relative;height:220px;" class="clear" > 
+  <ul class="cai_word clear">
+  
+    
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">15</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=673'">
+	 <h4>纪念《百年孤独》出版五十周年</h4>
+	 <div class="h7">时间：周五&nbsp;16点0分</div>
+	 <div class="h7">地点：八里台校区外国语学院110霁野厅</div>
+	 <div class="h7">主讲人：Hugo Hernan Ramirez
+	 
+	</div>
+	<div class="h7">主办单位：外国语学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">15</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=671'">
+	 <h4>气候变化适应性的价值研究</h4>
+	 <div class="h7">时间：周五&nbsp;14点30分</div>
+	 <div class="h7">地点：八里台校区经济学院高层 10楼会议室</div>
+	 <div class="h7">主讲人：黄开兴
+	 
+	</div>
+	<div class="h7">主办单位：经济学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">15</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=675'">
+	 <h4>图情论文选题、写作与投稿</h4>
+	 <div class="h7">时间：周五&nbsp;9点0分</div>
+	 <div class="h7">地点：八里台校区东方艺术系一楼逸夫厅</div>
+	 <div class="h7">主讲人：初景利
+	 
+	</div>
+	<div class="h7">主办单位：图书馆</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">14</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=669'">
+	 <h4>思维导图入门，服务你的工作与生活（图书馆讲坛系列讲座）</h4>
+	 <div class="h7">时间：周四&nbsp;15点0分</div>
+	 <div class="h7">地点：津南校区中心馆培训室211</div>
+	 <div class="h7">主讲人：刘兴龙
+	 
+	</div>
+	<div class="h7">主办单位：图书馆</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">12</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=665'">
+	 <h4>思维导图入门，服务你的工作与生活（图书馆讲坛系列讲座）</h4>
+	 <div class="h7">时间：周二&nbsp;16点0分</div>
+	 <div class="h7">地点：八里台校区逸夫馆 404 电子培训室</div>
+	 <div class="h7">主讲人：刘兴龙
+	 
+	</div>
+	<div class="h7">主办单位：图书馆</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">12</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=667'">
+	 <h4>Spectrum of SYK model</h4>
+	 <div class="h7">时间：周二&nbsp;16点0分</div>
+	 <div class="h7">地点：八里台校区数学院第二报告厅</div>
+	 <div class="h7">主讲人：Marcel de jeu
+	 
+	</div>
+	<div class="h7">主办单位：数学学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">11</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=663'">
+	 <h4>中国古代立法中的“情”与“理”</h4>
+	 <div class="h7">时间：周一&nbsp;15点30分</div>
+	 <div class="h7">地点：津南校区法学院331会议室</div>
+	 <div class="h7">主讲人：刘晓林
+	 
+	</div>
+	<div class="h7">主办单位：法学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">11</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=661'">
+	 <h4>社会治理中的地方法院：以明国时期的西安地方法院为例</h4>
+	 <div class="h7">时间：周一&nbsp;14点0分</div>
+	 <div class="h7">地点：津南校区法学院331会议室</div>
+	 <div class="h7">主讲人：侯欣一
+	 
+	</div>
+	<div class="h7">主办单位：法学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">7</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=660'">
+	 <h4>图书馆系列讲座——SPSS进阶学习与研究成果撰写</h4>
+	 <div class="h7">时间：周四&nbsp;15点0分</div>
+	 <div class="h7">地点：津南校区中心馆培训室211</div>
+	 <div class="h7">主讲人：马迪倩
+	 
+	</div>
+	<div class="h7">主办单位：图书馆</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">5</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=659'">
+	 <h4>图书馆系列讲座——SPSS进阶学习与研究成果撰写</h4>
+	 <div class="h7">时间：周二&nbsp;16点0分</div>
+	 <div class="h7">地点：八里台校区逸夫馆 404 电子培训室</div>
+	 <div class="h7">主讲人：马迪倩
+	 
+	</div>
+	<div class="h7">主办单位：图书馆</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">5</div><div class="h6">Dec</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=657'">
+	 <h4>正午阳光·金融学术思享汇第38期</h4>
+	 <div class="h7">时间：周二&nbsp;12点0分</div>
+	 <div class="h7">地点：津南校区金融学院234室</div>
+	 <div class="h7">主讲人：欧阳夫
+	 
+	</div>
+	<div class="h7">主办单位：金融学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">30</div><div class="h6">Nov</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=656'">
+	 <h4>图书馆系列讲座： 管理知识、捕捉灵感——“印象笔记”入门</h4>
+	 <div class="h7">时间：周四&nbsp;15点0分</div>
+	 <div class="h7">地点：津南校区中心馆培训室211</div>
+	 <div class="h7">主讲人：王珺
+	 
+	</div>
+	<div class="h7">主办单位：图书馆</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">28</div><div class="h6">Nov</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=655'">
+	 <h4>图书馆系列讲座： 管理知识、捕捉灵感——“印象笔记”入门</h4>
+	 <div class="h7">时间：周二&nbsp;16点0分</div>
+	 <div class="h7">地点：八里台校区逸夫馆 404 电子培训室</div>
+	 <div class="h7">主讲人：王珺
+	 
+	</div>
+	<div class="h7">主办单位：图书馆</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">28</div><div class="h6">Nov</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=653'">
+	 <h4>Housing Price Spillovers in China: A High-Dimensional Generalized VAR Approach</h4>
+	 <div class="h7">时间：周二&nbsp;12点0分</div>
+	 <div class="h7">地点：津南校区金融学院234教室</div>
+	 <div class="h7">主讲人：余子良
+	 
+	</div>
+	<div class="h7">主办单位：金融学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">27</div><div class="h6">Nov</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=651'">
+	 <h4>经济史上的“丝绸之路”</h4>
+	 <div class="h7">时间：周一&nbsp;14点0分</div>
+	 <div class="h7">地点：津南校区历史学院237教室</div>
+	 <div class="h7">主讲人：李伯重
+	 
+	</div>
+	<div class="h7">主办单位：历史学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">27</div><div class="h6">Nov</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=652'">
+	 <h4>精算发展趋势报告</h4>
+	 <div class="h7">时间：周一&nbsp;14点0分</div>
+	 <div class="h7">地点：津南校区金融学院205教室</div>
+	 <div class="h7">主讲人：王东、李文明
+	 
+	</div>
+	<div class="h7">主办单位：金融学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">27</div><div class="h6">Nov</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=654'">
+	 <h4>对近代中国经济史研究的几点思考</h4>
+	 <div class="h7">时间：周一&nbsp;9点0分</div>
+	 <div class="h7">地点：八里台校区经济学院高层8楼经济研究所大会议室</div>
+	 <div class="h7">主讲人：朱荫贵
+	 
+	</div>
+	<div class="h7">主办单位：经济学院</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">24</div><div class="h6">Nov</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=649'">
+	 <h4>Integrative Analysis of Multi-Dimensional Cancer Genomics Data</h4>
+	 <div class="h7">时间：周五&nbsp;14点0分</div>
+	 <div class="h7">地点：津南校区计算机与控制工程学院523 </div>
+	 <div class="h7">主讲人：郑春厚
+	 
+	</div>
+	<div class="h7">主办单位：党委研究生工作部</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">23</div><div class="h6">Nov</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=647'">
+	 <h4>找不到文献全文怎么办——馆际互借和文献传递服务</h4>
+	 <div class="h7">时间：周四&nbsp;15点0分</div>
+	 <div class="h7">地点：津南校区中心馆培训室211</div>
+	 <div class="h7">主讲人：张红莉
+	 
+	</div>
+	<div class="h7">主办单位：图书馆</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+			   
+	<li class="cc clear left clear" >
+     <div class="left">
+	    <div class="h2">22</div><div class="h6">Nov</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont"  onclick="window.location.href='newfindbyid.action?id=645'">
+	 <h4>如何书写食物史：全球史与物质文化视角的探讨</h4>
+	 <div class="h7">时间：周三&nbsp;19点0分</div>
+	 <div class="h7">地点：津南校区历史学院127</div>
+	 <div class="h7">主讲人：蒋竹山
+	 
+	</div>
+	<div class="h7">主办单位：党委研究生工作部</div>
+	 </div>
+	 <!-- <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i> -->
+	 <!-- JiaThis Button BEGIN -->
+		
+	 </div>
+  </li>
+  
+  
+  
+  <!-- 
+  
+  <li class="cc clear left clear">
+     <div class="left">
+	    <div class="h2">19</div><div class="h6">Jun</div>
+	 </div>
+	 <div class="right ">
+	 <div class="cont">
+	 <h4>科学研究中的大数据分析</h4>
+	 <div class="h7">时间：周五晚上</div>
+	 <div class="h7">地点：柏林楼多功能他</div>
+	 <div class="h7">主讲人：李茜</div>
+	 </div>
+	 <i class="search-ico iconfont" >&#xe601;&nbsp;&#xe602;&nbsp;&#xe604;</i>
+	 </div>
+  </li>
+-->
+  </ul>
+  </div>
+  <div class="clear main-tit" style="height:34px" >
+    <div class="left " style="cursor:pointer" onclick="window.location.href='list.action'"
+    >
+	<h5>精彩回顾</h5>
+	</div>
+	<div class="right">
+	<img class="con2 jingleft" src="img/9.png" alt="" />
+	<img class="con2 jingright" src="img/8.png" alt="" />
+	</div>
+  </div>
+ <div style="position:relative;height:200px;" class="clear" > 
+  <ul class="clear jingcai">
+  	 
+     <li onclick="window.location.href='newfindbyid.action?id=529'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/529/3.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">图书馆讲坛系列讲座(中心馆) 人生苦短，我用Python---让编程服务你的学习与生活</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=525'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/525/2.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">南开金融学术讲堂 第31讲 Agency Problem, CEO Incentives and Stock Price Dynamics: an Experimental Study</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=521'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/521/1.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">与知名律师面对面 国浩-南开点亮律师梦想计划（第二期）宣讲</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=384'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/384/32.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">我的学思历程——世界名案探讨</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=380'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/380/2.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">期货市场法律监管及发展</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=372'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/372/229339123319530717.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">导师有约——美国UCLA访学见闻</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=368'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/368/200125674909677423.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">南开史学名人讲座——1920年代的商会与商民协会</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=341'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/341/745761861237596969.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">叶嘉莹南开谈诗忆往</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=328'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/328/196554138652055362.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">大数据时代的医疗保健和风险预测</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=322'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/322/000.png" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">周恩来论坛——转折2016：后全球化时代的开始？</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=293'">
+			   <div class="zzsc">
+			   
+	  <img src="/upload/293/223307732718406351.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">教师发展中心 · 美育大讲堂系列讲座： 诗歌之美——解读现代新诗</div>
+	  
+	</li><li onclick="window.location.href='newfindbyid.action?id=298'">
+			   <div class="zzsc">
+			   
+   					 <div class="ribbon-zzsc-green"><div class="ribbon-green">视频</div></div>​​
+			   
+	  <img src="/upload/298/402075425522967542.jpg" alt="" style="width: 180px;height: 110px;position:absolute;"/></img>
+			    
+							    
+	  				</div>
+	  			
+	  <div class="h7">认真学习贯彻十八届六中全会精神 为全面从严治党作贡献</div>
+	  
+	</li>
+  </ul>
+  
+</div>
+</div>
+
+<div class="footer navbar-fixed-bottom ">
+
+
+本网站由八里台网络文化工作室设计维护Copyright©2017 津ICP备12003308号-1<br>
+联系电话：022-85358326 邮箱：xcb@nankai.edu.cn
+</div>
+
+<div style='display:none;' class="jishu" id="0"></div>
+</body>
+<script>
+$(function(){  
+        $(".tit1").hover(function(){  
+            $(".pp").show();  
+        },function(){  
+            $(".pp").hide();  
+        });  
+    });  
+
+</script>
+
+	
+</html>
